@@ -152,7 +152,6 @@ export const TguiTarget = new Juke.Target({
   outputs: [
     'tgui/public/tgui.bundle.css',
     'tgui/public/tgui.bundle.js',
-    'tgui/public/tgui-common.bundle.js',
     'tgui/public/tgui-panel.bundle.css',
     'tgui/public/tgui-panel.bundle.js',
   ],
@@ -194,6 +193,31 @@ export const TguiDevTarget = new Juke.Target({
   dependsOn: [YarnTarget],
   executes: async ({ args }) => {
     await yarn('node', 'packages/tgui-dev-server/index.esm.js', ...args);
+  },
+});
+
+export const TguiAnalyzeTarget = new Juke.Target({
+  dependsOn: [YarnTarget],
+  executes: async () => {
+    await yarn('webpack-cli', '--mode=production', '--analyze');
+  },
+});
+
+export const TguiTestTarget = new Juke.Target({
+  dependsOn: [YarnTarget],
+  executes: async ({ args }) => {
+    await yarn('jest', ...args);
+  },
+});
+
+export const TguiLintTarget = new Juke.Target({
+  dependsOn: [YarnTarget, TguiEslintTarget, TguiTscTarget, TguiTestTarget],
+});
+
+export const TguiDevTarget = new Juke.Target({
+  dependsOn: [YarnTarget],
+  executes: async ({ args }) => {
+    await yarn('node', 'packages/tgui-dev-server/index.js', ...args);
   },
 });
 
