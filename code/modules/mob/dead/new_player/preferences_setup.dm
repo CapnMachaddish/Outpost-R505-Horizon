@@ -122,6 +122,12 @@
 		mutant_bodyparts[key][MUTANT_INDEX_COLOR_LIST] = SA.get_default_color(features, pref_species)
 	else if (SA.color_src == USE_ONE_COLOR && colorlist.len != 1)
 		mutant_bodyparts[key][MUTANT_INDEX_COLOR_LIST] = SA.get_default_color(features, pref_species)
+	else
+		/// If we're not defaulting to the color, sanitize the already existing hex
+		var/index = 0
+		for(var/color in colorlist)
+			index++
+			colorlist[index] = sanitize_hexcolor(color, 6, FALSE)
 
 /datum/preferences/proc/set_new_species(new_species_path)
 	pref_species = new new_species_path()
