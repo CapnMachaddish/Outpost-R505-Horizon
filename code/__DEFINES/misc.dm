@@ -20,12 +20,12 @@
 #define BODY_LAYER 26 //underwear, undershirts, socks, eyes, lips(makeup)
 #define FRONT_MUTATIONS_LAYER 25 //mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
 #define DAMAGE_LAYER 24 //damage indicators (cuts and burns)
-#define HANDS_PART_LAYER 23
-#define GLOVES_LAYER 22
-#define UNIFORM_LAYER 21
-#define BANDAGE_LAYER 20 //For bandages and splints
-#define ID_LAYER 19
-#define ID_CARD_LAYER 18
+#define UNIFORM_LAYER 23
+#define BANDAGE_LAYER 22 //For bandages and splints
+#define ID_LAYER 21
+#define ID_CARD_LAYER 20
+#define HANDS_PART_LAYER 19
+#define GLOVES_LAYER 18
 #define SHOES_LAYER 17
 #define EARS_LAYER 16
 #define SUIT_LAYER 15
@@ -38,8 +38,8 @@
 #define FACEMASK_LAYER 8
 #define HEAD_LAYER 7
 #define HANDCUFF_LAYER 6
-#define LEGCUFF_LAYER 5
-#define HANDS_LAYER 4
+#define HANDS_LAYER 5
+#define LEGCUFF_LAYER 4
 #define BODY_FRONT_LAYER 3
 #define HALO_LAYER 2 //blood cult ascended halo, because there's currently no better solution for adding/removing
 #define FIRE_LAYER 1 //If you're on fire
